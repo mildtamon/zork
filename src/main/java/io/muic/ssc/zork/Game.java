@@ -1,16 +1,13 @@
 package io.muic.ssc.zork;
 
-import io.muic.ssc.zork.command.Command;
-import io.muic.ssc.zork.command.CommandFactory;
-import io.muic.ssc.zork.command.CommandParser;
-import io.muic.ssc.zork.command.CommandType;
+import io.muic.ssc.zork.command.*;
 
 import java.util.Scanner;
 
 public class Game {
 
     private boolean exit = false;
-    // create scanner to scan input command
+    // The Scanner class is used to get user input, create scanner to scan input command
     private Scanner scanner = new Scanner(System.in);
 
     public boolean isExit() {
@@ -29,12 +26,12 @@ public class Game {
             String rawInput = scanner.nextLine();
             System.out.println("You entered string " + rawInput);
 
-            CommandType commandType = CommandParser.parseCommand(rawInput);
-            Command command = CommandFactory.get(commandType);
-            if (command == null) {
-                System.out.println("Try again");
+            CommandLine commandLine = CommandParser.parseCommand(rawInput);
+            if (commandLine == null) {
+                System.out.println("Invalid command, please try again");
             } else {
-                command.execute(this);
+                Command command = CommandFactory.get(commandLine.getCommandType());
+                command.execute(this, commandLine.getArgument());
             }
         }
     }

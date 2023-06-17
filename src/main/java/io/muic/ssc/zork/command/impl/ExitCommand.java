@@ -6,7 +6,9 @@ import io.muic.ssc.zork.command.Command;
 public class ExitCommand implements Command {
 
     @Override
-    public void execute(Game game) {
-        game.exit();
+    public void execute(Game game, String argument) {
+        if (argument != null) {
+            System.out.println("exit does not have any argument, please try again");
+        } else { game.exit(); }
     }
 }
