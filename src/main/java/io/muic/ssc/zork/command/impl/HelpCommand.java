@@ -10,7 +10,7 @@ public class HelpCommand implements Command {
     @Override
     public void execute(Game game, String argument) {
         if (argument != null) {
-            System.out.println("exit does not have any argument, please try again");
+            System.out.println("'help' does not have any argument, please try again");
         } else {
             try (FileReader fileReader = new FileReader("src/main/java/io/muic/ssc/zork/allCommandInfo.txt");) {
                 int content;
@@ -19,7 +19,6 @@ public class HelpCommand implements Command {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-//                System.out.println("file not found");
             }
         }
     }

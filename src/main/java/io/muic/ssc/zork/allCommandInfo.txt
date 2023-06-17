@@ -1,16 +1,20 @@
 Available Commands
-- info: print out information of the player and the room that the player is currently in, this command only available while playing game. These are:
-        * Player stats, e.g. HP/HP Max, attack power, etc.
-        * Room information, e.g. Monster stats (if any), item stats (if any), doors, etc.
-- take: take command is used to pick up the item in the current room, this command only available while playing game.
-- use: use command is used to use the item that is not weapon in the current room, this command only available while playing game.
-- drop: drop item of choice that the player currently carries, this command only available while playing game.
-- attack with: is used to attack a monster in the current room, this command only available while playing game.
-- go {direction}: move player to the room as specified by the direction, e.g. north, east, west, south, this command only available while playing game
-- map: print 2D map using ascii art. (this command only available while playing game)
-- help: print all commands
-- quit: end the current game and return to command prompt to let user choose the map or load from saved point again.
-- play {map-name}: play new game. (this command only available at when start the game)
-- load {saved-point-name}: load game state from saved point. (this command only available at when start the game)
-- save {saved-point-name}: load game state from saved point. (this command only available while playing game)
-- exit: exit whole game, this command only available at when start the game.
+
+[-starting game-]
+- play {map-name}: play new game.
+- load {saved-point-name}: load game state from saved point.
+- save {saved-point-name}: save game state from saved point.
+
+[-game play-]
+- info: show information of the player and the current room.
+- take: pick up the item.
+- use: use the item that is not weapon.
+- drop: drop the item.
+- attack with: attack a monster.
+- go {direction}: move to the room on that direction.
+- map: show map.
+
+[-other-]
+- help: list all the commands.
+- quit: go to home.
+- exit: exit the game.
