@@ -1,6 +1,7 @@
-package io.muic.ssc.zork.command;
+package io.muic.ssc.zork.command.impl;
 
 import io.muic.ssc.zork.Game;
+import io.muic.ssc.zork.command.Command;
 
 public class InfoCommand implements Command {
 

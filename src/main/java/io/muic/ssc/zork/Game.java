@@ -2,10 +2,10 @@ package io.muic.ssc.zork;
 
 import io.muic.ssc.zork.command.Command;
 import io.muic.ssc.zork.command.CommandFactory;
-import io.muic.ssc.zork.command.ExitCommand;
+import io.muic.ssc.zork.command.CommandParser;
+import io.muic.ssc.zork.command.CommandType;
 
 import java.util.Scanner;
-import java.util.SortedMap;
 
 public class Game {
 
@@ -29,7 +29,8 @@ public class Game {
             String rawInput = scanner.nextLine();
             System.out.println("You entered string " + rawInput);
 
-            Command command = CommandFactory.get(rawInput);
+            CommandType commandType = CommandParser.parseCommand(rawInput);
+            Command command = CommandFactory.get(commandType);
             if (command == null) {
                 System.out.println("Try again");
             } else {
