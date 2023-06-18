@@ -3,11 +3,13 @@ package io.muic.ssc.zork.command;
 import io.muic.ssc.zork.command.impl.ExitCommand;
 import io.muic.ssc.zork.command.impl.HelpCommand;
 import io.muic.ssc.zork.command.impl.InfoCommand;
+import io.muic.ssc.zork.command.impl.MapCommand;
 
 public enum CommandType {
     INFO(InfoCommand.class, "info"),
     EXIT(ExitCommand.class, "exit"),
-    HELP(HelpCommand.class, "help");
+    HELP(HelpCommand.class, "help"),
+    MAP(MapCommand.class, "map");
 
     private Class<? extends Command> commandClass;      // need to get class -> so we know which command class to execute
     private String commandWord;

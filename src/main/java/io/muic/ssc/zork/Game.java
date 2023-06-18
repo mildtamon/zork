@@ -1,6 +1,9 @@
 package io.muic.ssc.zork;
 
 import io.muic.ssc.zork.command.*;
+import io.muic.ssc.zork.map.Map;
+import io.muic.ssc.zork.map.MapFactory;
+import io.muic.ssc.zork.map.MapType;
 import io.muic.ssc.zork.player.Player;
 
 import java.util.Scanner;
@@ -12,6 +15,7 @@ public class Game {
 
     private boolean exit = false;
     public static Player player;
+    public static Map currentMap;
 
     public boolean isExit() {
         return exit;
@@ -31,6 +35,8 @@ public class Game {
 
         while (!isExit() && scanner.hasNextLine()) {
             String rawInput = scanner.nextLine();
+
+            currentMap = MapFactory.createMap(MapType.TUTORIAL, MapType.TUTORIAL.getMapName(), MapType.TUTORIAL.getMapDescription());
 
             CommandLine commandLine = CommandParser.parseCommand(rawInput);
             if (commandLine == null) {
