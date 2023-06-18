@@ -3,10 +3,11 @@ package io.muic.ssc.zork.map.impl;
 import io.muic.ssc.zork.map.Map;
 import io.muic.ssc.zork.room.Room;
 
+import static io.muic.ssc.zork.player.Player.currentRoom;
+
 public class TutorialMap implements Map {
     private String mapName;
     private String mapDescription;
-    private Room currentRoom;
 
     public String getMapName() {
         return mapName;
@@ -45,19 +46,13 @@ public class TutorialMap implements Map {
         trainingRoom2.setExit(null, null, storage, null);
         boss.setExit(null, null, null, storage);
 
+        // set the first location to be at lobby.
         currentRoom = lobby;
-    }
-
-    public void setCurrentRoom(Room currentRoom) {
-        this.currentRoom = currentRoom;
-    }
-    public Room getCurrentRoom() {
-        return currentRoom;
     }
 
     @Override
     public String getRoomDescription() {
-        return String.format("* Map: %s \n* You are at %s. %s", getMapName(), getCurrentRoom().getRoomName(), getCurrentRoom().getDescription());
+        return String.format("* Map: %s \n* You are at %s. %s", getMapName(), currentRoom.getRoomName(), currentRoom.getDescription());
     }
 
     String tutorialLevelMap =

@@ -4,7 +4,7 @@ public class Room {
 
     String roomName;
     String roomDescription;
-    Room northExit, eastExit, westExit, southExit;
+    public Room northExit, eastExit, westExit, southExit;
 
     public Room(String roomName, String description) {
         this.roomName = roomName;

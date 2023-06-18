@@ -8,6 +8,6 @@ public class MapFactory {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        throw new RuntimeException("Unknown map");
+        throw new RuntimeException("Unknown map, please try again.");
     }
 }

@@ -18,6 +18,5 @@ public class InfoCommand implements Command {
             System.out.println("\n[[ location info ]]");
             System.out.println(currentMap.getRoomDescription());
         }
-
     }
 }

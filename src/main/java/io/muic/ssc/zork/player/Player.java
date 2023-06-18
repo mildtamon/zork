@@ -40,6 +40,14 @@ public class Player {
         setItem(null);
     }
 
+    public static Room getCurrentRoom() {
+        return currentRoom;
+    }
+
+    public static void setCurrentRoom(Room currentRoom) {
+        Player.currentRoom = currentRoom;
+    }
+
     public String playerInfo() {
         return String.format("""
                           * current hp: %d/%d\s
