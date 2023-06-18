@@ -11,16 +11,18 @@ public class Room {
         this.roomDescription = description;
     }
 
+    public String getRoomName() {
+        return roomName;
+    }
+
     public String getDescription() {
         return roomDescription;
     }
 
-    public void setExit(Direction direction, Room neighbor) {
-        switch (direction) {
-            case NORTH: northExit = neighbor;
-            case EAST: eastExit = neighbor;
-            case WEST: westExit = neighbor;
-            case SOUTH: southExit = neighbor;
-        }
+    public void setExit(Room northNeighbor, Room eastNeighbor, Room westNeighbor, Room southNeighbor) {
+        northExit = northNeighbor;
+        eastExit = eastNeighbor;
+        westExit = westNeighbor;
+        southExit = southNeighbor;
     }
 }

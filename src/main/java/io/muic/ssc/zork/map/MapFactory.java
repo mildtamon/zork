@@ -1,8 +1,5 @@
 package io.muic.ssc.zork.map;
 
-
-import io.muic.ssc.zork.map.impl.TutorialMap;
-
 public class MapFactory {
 
     public static Map createMap(MapType mapType, String mapName, String mapDescription) {
