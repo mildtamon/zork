@@ -1,4 +1,4 @@
-Available Commands
+*Available Commands*
 
 [-starting game-]
 - play {map-name}: play new game.

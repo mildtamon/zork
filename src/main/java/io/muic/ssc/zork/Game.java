@@ -23,14 +23,14 @@ public class Game {
     }
 
     public void start() {
-        System.out.println("Game started");
+        System.out.println(">> starting Zork... <<");
+        System.out.println("type 'help' for list of commands");
 
         // create player
         player = new Player();
 
         while (!isExit() && scanner.hasNextLine()) {
             String rawInput = scanner.nextLine();
-//            System.out.println("command: " + rawInput);
 
             CommandLine commandLine = CommandParser.parseCommand(rawInput);
             if (commandLine == null) {
