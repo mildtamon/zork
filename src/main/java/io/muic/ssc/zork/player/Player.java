@@ -44,7 +44,6 @@ public class Player {
         return String.format("""
                           * current hp: %d/%d\s
                           * player is holding: %s\s
-                          * attack power: %d
-                          """, getHp(), MAX_HP, getItem(), getAttackPower());
+                          * attack power: %d""", getHp(), MAX_HP, getItem(), getAttackPower());
     }
 }
