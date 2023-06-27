@@ -1,6 +1,11 @@
 package io.muic.ssc.zork.map;
 
 import io.muic.ssc.zork.map.impl.TutorialMap;
+import io.muic.ssc.zork.room.Direction;
+
+import java.util.Objects;
+
+import static io.muic.ssc.zork.Game.allMaps;
 
 public enum MapType {
     TUTORIAL(TutorialMap.class, "Tutorial", "This is tutorial level to let the player familiar with the game and command");
@@ -15,7 +20,7 @@ public enum MapType {
         this.mapDescription = mapDescription;
     }
 
-    public Class<? extends Map> getMapClass() {
+    public Class getMapClass() {
         return mapClass;
     }
 
@@ -25,5 +30,14 @@ public enum MapType {
 
     public String getMapDescription() {
         return mapDescription;
+    }
+
+    public static Map getMap(String mapName) {
+        for (MapType mapType : MapType.values()) {
+            if (Objects.equals(mapName, mapType.mapName)) {
+                return MapFactory.createMap(mapType, mapType.getMapName(), mapType.getMapDescription());
+            }
+        }
+        return null;
     }
 }

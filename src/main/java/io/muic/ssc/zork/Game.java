@@ -6,6 +6,8 @@ import io.muic.ssc.zork.map.MapFactory;
 import io.muic.ssc.zork.map.MapType;
 import io.muic.ssc.zork.player.Player;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Game {
@@ -16,6 +18,7 @@ public class Game {
     private boolean exit = false;
     public static Player player;
     public static Map currentMap;
+    public static List<Map> allMaps = new ArrayList<>();
 
     public boolean isExit() {
         return exit;
@@ -34,7 +37,16 @@ public class Game {
         player = new Player();
 
         // create map
-        currentMap = MapFactory.createMap(MapType.TUTORIAL, MapType.TUTORIAL.getMapName(), MapType.TUTORIAL.getMapDescription());
+        currentMap = null;
+//        MapFactory.createMap(MapType.TUTORIAL, MapType.TUTORIAL.getMapName(), MapType.TUTORIAL.getMapDescription());
+
+        System.out.println("type 'play' and choose map to play! [Tutorial / ...]");
+
+//        for (MapType mapType : MapType.values()) {
+//            allMaps.add(MapFactory.createMap(mapType, mapType.getMapName(), mapType.getMapDescription()));
+//        }
+
+//        currentMap = MapFactory.createMap(MapType.TUTORIAL, MapType.TUTORIAL.getMapName(), MapType.TUTORIAL.getMapDescription());
 
         while (!isExit() && scanner.hasNextLine()) {
             String rawInput = scanner.nextLine();

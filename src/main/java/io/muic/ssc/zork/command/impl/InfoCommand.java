@@ -10,13 +10,18 @@ public class InfoCommand implements Command {
 
     @Override
     public void execute(Game game, String argument) {
-        if (argument != null) {
-            System.out.println("'info' does not have any argument, please try again");
+        if (currentMap != null) {
+            if (argument != null) {
+                System.out.println("'info' does not have any argument, please try again");
+            } else {
+                System.out.println("[[ player info ]]");
+                System.out.println(player.playerInfo());
+                System.out.println("\n[[ location info ]]");
+                System.out.println(currentMap.getRoomDescription());
+            }
         } else {
-            System.out.println("[[ player info ]]");
-            System.out.println(player.playerInfo());
-            System.out.println("\n[[ location info ]]");
-            System.out.println(currentMap.getRoomDescription());
+            System.out.println("this command only available while playing game. \n" +
+                    "please enter the game by typing 'play' followed by the map you want to play.");
         }
     }
 }

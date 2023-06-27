@@ -4,7 +4,7 @@ public class MapFactory {
 
     public static Map createMap(MapType mapType, String mapName, String mapDescription) {
         try {
-            return mapType.getMapClass().getDeclaredConstructor(String.class, String.class).newInstance(mapName, mapDescription);
+            return (Map) mapType.getMapClass().getDeclaredConstructor(String.class, String.class).newInstance(mapName, mapDescription);
         } catch (Exception e) {
             e.printStackTrace();
         }

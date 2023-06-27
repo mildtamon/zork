@@ -8,10 +8,15 @@ import static io.muic.ssc.zork.Game.currentMap;
 public class MapCommand implements Command {
     @Override
     public void execute(Game game, String argument) {
-        if (argument != null) {
-            System.out.println("'map' does not have any argument, please try again");
+        if (currentMap != null) {
+            if (argument != null) {
+                System.out.println("'map' does not have any argument, please try again");
+            } else {
+                System.out.println(currentMap.printMap());
+            }
         } else {
-            System.out.println(currentMap.printMap());
+            System.out.println("this command only available while playing game. \n" +
+                    "please enter the game by typing 'play' followed by the map you want to play.");
         }
     }
 }
