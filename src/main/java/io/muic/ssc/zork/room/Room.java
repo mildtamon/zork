@@ -11,6 +11,24 @@ public class Room {
         this.roomDescription = description;
     }
 
+    public Room getExit(Direction direction) {
+        switch (direction) {
+            case NORTH -> {
+                return this.northExit;
+            }
+            case EAST -> {
+                return this.eastExit;
+            }
+            case WEST -> {
+                return this.westExit;
+            }
+            case SOUTH -> {
+                return this.southExit;
+            }
+        }
+        return null;
+    }
+
     public String getRoomName() {
         return roomName;
     }

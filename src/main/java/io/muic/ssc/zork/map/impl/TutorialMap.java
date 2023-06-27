@@ -2,8 +2,8 @@ package io.muic.ssc.zork.map.impl;
 
 import io.muic.ssc.zork.map.Map;
 import io.muic.ssc.zork.room.Room;
+import static io.muic.ssc.zork.Game.player;
 
-import static io.muic.ssc.zork.player.Player.currentRoom;
 
 public class TutorialMap implements Map {
     private String mapName;
@@ -37,7 +37,7 @@ public class TutorialMap implements Map {
         storage = new Room("Storage room", "Get your weapon and be ready to fight!");
         trainingRoom1 = new Room("training room 1", "Hit your first monster here!");
         trainingRoom2 = new Room("training room 2", "Practice fighting before going to the boss battle!");
-        boss = new Room("boss room", "Fight again the boss to pass the level");
+        boss = new Room("boss room", "Fight against the boss to pass the level");
 
         // link the rooms
         lobby.setExit(storage, null, null, null);
@@ -47,12 +47,12 @@ public class TutorialMap implements Map {
         boss.setExit(null, null, null, storage);
 
         // set the first location to be at lobby.
-        currentRoom = lobby;
+        player.currentRoom = lobby;
     }
 
     @Override
     public String getRoomDescription() {
-        return String.format("* Map: %s \n* You are at %s. %s", getMapName(), currentRoom.getRoomName(), currentRoom.getDescription());
+        return String.format("* Map: %s \n* You are at %s. %s", getMapName(), player.getCurrentRoom().getRoomName(), player.getCurrentRoom().getDescription());
     }
 
     String tutorialLevelMap =
@@ -81,6 +81,6 @@ public class TutorialMap implements Map {
 
     @Override
     public String printMap() {
-        return String.format("[Map] %s: %s\n", this.getMapName(), this.mapDescription) + tutorialLevelMap;
+        return String.format("[Map] %s: %s\n", this.getMapName(), this.getMapDescription()) + tutorialLevelMap;
     }
 }

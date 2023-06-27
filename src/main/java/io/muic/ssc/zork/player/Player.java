@@ -10,7 +10,7 @@ public class Player {
     private int attackPower;
     private String item;
 
-    public static Room currentRoom;
+    public Room currentRoom;
 
     public int getHp() {
         return hp;
@@ -40,12 +40,12 @@ public class Player {
         setItem(null);
     }
 
-    public static Room getCurrentRoom() {
+    public Room getCurrentRoom() {
         return currentRoom;
     }
 
-    public static void setCurrentRoom(Room currentRoom) {
-        Player.currentRoom = currentRoom;
+    public void setCurrentRoom(Room currentRoom) {
+        this.currentRoom = currentRoom;
     }
 
     public String playerInfo() {

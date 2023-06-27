@@ -33,10 +33,11 @@ public class Game {
         // create player
         player = new Player();
 
+        // create map
+        currentMap = MapFactory.createMap(MapType.TUTORIAL, MapType.TUTORIAL.getMapName(), MapType.TUTORIAL.getMapDescription());
+
         while (!isExit() && scanner.hasNextLine()) {
             String rawInput = scanner.nextLine();
-
-            currentMap = MapFactory.createMap(MapType.TUTORIAL, MapType.TUTORIAL.getMapName(), MapType.TUTORIAL.getMapDescription());
 
             CommandLine commandLine = CommandParser.parseCommand(rawInput);
             if (commandLine == null) {
