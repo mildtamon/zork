@@ -7,7 +7,8 @@ public enum CommandType {
     EXIT(ExitCommand.class, "exit"),
     HELP(HelpCommand.class, "help"),
     MAP(MapCommand.class, "map"),
-    GO(GoCommand.class, "go");
+    GO(GoCommand.class, "go"),
+    TAKE(TakeCommand.class, "take");
 
     private Class<? extends Command> commandClass;      // need to get class -> so we know which command class to execute
     private String commandWord;

@@ -1,5 +1,7 @@
 package io.muic.ssc.zork.player;
 
+import io.muic.ssc.zork.item.Item;
+import io.muic.ssc.zork.item.ItemType;
 import io.muic.ssc.zork.room.Room;
 
 public class Player {
@@ -8,7 +10,7 @@ public class Player {
 
     private int hp;
     private int attackPower;
-    private String item;
+    private ItemType item;
 
     public Room currentRoom;
 
@@ -26,10 +28,10 @@ public class Player {
         this.attackPower = attackPower;
     }
 
-    public String getItem() {
+    public ItemType getItem() {
         return item;
     }
-    public void setItem(String item) {
+    public void setItem(ItemType item) {
         this.item = item;
     }
 
@@ -52,6 +54,6 @@ public class Player {
         return String.format("""
                           * current hp: %d/%d\s
                           * player is holding: %s\s
-                          * attack power: %d""", getHp(), MAX_HP, getItem(), getAttackPower());
+                          * attack power: %d""", getHp(), MAX_HP,  ((getItem() == null)? getItem() : getItem().getItemName()), getAttackPower());
     }
 }

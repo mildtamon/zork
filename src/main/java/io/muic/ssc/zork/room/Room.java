@@ -1,10 +1,23 @@
 package io.muic.ssc.zork.room;
 
+import io.muic.ssc.zork.item.Item;
+import io.muic.ssc.zork.item.ItemType;
+
 public class Room {
 
     String roomName;
     String roomDescription;
     public Room northExit, eastExit, westExit, southExit;
+
+    public ItemType getItem() {
+        return item;
+    }
+
+    public void setItem(ItemType item) {
+        this.item = item;
+    }
+
+    ItemType item;
 
     public Room(String roomName, String description) {
         this.roomName = roomName;

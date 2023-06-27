@@ -1,5 +1,7 @@
 package io.muic.ssc.zork.map.impl;
 
+import io.muic.ssc.zork.item.ItemType;
+import io.muic.ssc.zork.item.Weapon;
 import io.muic.ssc.zork.map.Map;
 import io.muic.ssc.zork.room.Room;
 import static io.muic.ssc.zork.Game.player;
@@ -45,6 +47,11 @@ public class TutorialMap implements Map {
         trainingRoom1.setExit(null, storage, null, null);
         trainingRoom2.setExit(null, null, storage, null);
         boss.setExit(null, null, null, storage);
+
+        // create item
+        storage.setItem(ItemType.WOODENSWORD);
+        trainingRoom1.setItem(ItemType.IRONSWORD);
+
 
         // set the first location to be at lobby.
         player.currentRoom = lobby;
