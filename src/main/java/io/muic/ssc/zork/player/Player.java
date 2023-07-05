@@ -11,6 +11,7 @@ public class Player {
     private int hp;
     private int attackPower;
     private ItemType item;
+    private ItemType weapon;
 
     public Room currentRoom;
 
@@ -35,11 +36,19 @@ public class Player {
         this.item = item;
     }
 
+    public ItemType getWeapon() {
+        return weapon;
+    }
+    public void setWeapon(ItemType weapon) {
+        this.weapon = weapon;
+    }
+
     // constructor
     public Player() {
         setHp(50);
         setAttackPower(1);
         setItem(null);
+        setWeapon(null);
     }
 
     public Room getCurrentRoom() {
@@ -53,7 +62,9 @@ public class Player {
     public String playerInfo() {
         return String.format("""
                           * current hp: %d/%d\s
-                          * player is holding: %s\s
-                          * attack power: %d""", getHp(), MAX_HP,  ((getItem() == null)? getItem() : getItem().getItemName()), getAttackPower());
+                          * current weapon: %s\s
+                          * current item: %s\s
+                          * attack power: %d""", getHp(), MAX_HP,  ((getWeapon() == null)? getWeapon() : getWeapon().getItemName()),
+                                                 ((getItem() == null)? getItem() : getItem().getItemName()), getAttackPower());
     }
 }
