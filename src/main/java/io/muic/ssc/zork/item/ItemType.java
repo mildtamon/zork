@@ -4,7 +4,6 @@ public enum ItemType {
     WOODENSWORD(Weapon.class, "wooden sword", 3),
     IRONSWORD(Weapon.class, "iron sword", 5),
     POTION(Healing.class, "healing potion", 10);
-//    STICK(Weapon.class, "wooden stick", 1),;
 
     private Class<? extends Item> itemClass;
     private String itemName;

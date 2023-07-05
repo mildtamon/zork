@@ -27,8 +27,13 @@ public class GoCommand implements Command {
 
                 // new current room description
                 System.out.println(player.getCurrentRoom().getDescription());
+
+                // print status of this room (weapon, item, monster)
                 if (player.getCurrentRoom().getItem() != null) {
                     System.out.println("item in this room: " + player.getCurrentRoom().getItem().getItemName());
+                }
+                if (player.getCurrentRoom().getMonster() != null) {
+                    System.out.println("monster in this room: " + player.getCurrentRoom().getMonster().getMonsterName());
                 }
             }
             else { System.out.printf("There is a wall!, you cannot go %s!%n", argument); }

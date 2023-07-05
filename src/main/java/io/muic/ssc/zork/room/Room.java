@@ -2,22 +2,29 @@ package io.muic.ssc.zork.room;
 
 import io.muic.ssc.zork.item.Item;
 import io.muic.ssc.zork.item.ItemType;
+import io.muic.ssc.zork.moster.MonsterType;
 
 public class Room {
 
     String roomName;
     String roomDescription;
+    ItemType item;
     public Room northExit, eastExit, westExit, southExit;
 
     public ItemType getItem() {
         return item;
     }
-
     public void setItem(ItemType item) {
         this.item = item;
     }
 
-    ItemType item;
+    MonsterType monster;
+    public MonsterType getMonster() {
+        return monster;
+    }
+    public void setMonster(MonsterType monster) {
+        this.monster = monster;
+    }
 
     public Room(String roomName, String description) {
         this.roomName = roomName;

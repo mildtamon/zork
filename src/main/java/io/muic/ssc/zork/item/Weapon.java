@@ -11,9 +11,4 @@ public class Weapon implements Item {
     public void useItem() {
 
     }
-
-    @Override
-    public String getItemDescription() {
-        return null;
-    }
 }

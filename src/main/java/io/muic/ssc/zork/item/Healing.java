@@ -10,9 +10,4 @@ public class Healing implements Item {
     public void useItem() {
 
     }
-
-    @Override
-    public String getItemDescription() {
-        return null;
-    }
 }

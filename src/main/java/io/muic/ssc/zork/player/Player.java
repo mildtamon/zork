@@ -6,6 +6,8 @@ import io.muic.ssc.zork.room.Room;
 
 public class Player {
 
+    // TODO: set dead to player
+
     private final int MAX_HP = 50;
 
     private int hp;

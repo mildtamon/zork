@@ -2,6 +2,7 @@ package io.muic.ssc.zork.map.impl;
 
 import io.muic.ssc.zork.item.ItemType;
 import io.muic.ssc.zork.map.Map;
+import io.muic.ssc.zork.moster.MonsterType;
 import io.muic.ssc.zork.room.Room;
 import static io.muic.ssc.zork.Game.player;
 
@@ -52,6 +53,9 @@ public class TutorialMap implements Map {
         trainingRoom1.setItem(ItemType.IRONSWORD);
         trainingRoom2.setItem(ItemType.POTION);
 
+        // create monster
+        boss.setMonster(MonsterType.FRISTBOSS);
+        trainingRoom1.setMonster(MonsterType.ZOMBIE);
 
         // set the first location to be at lobby.
         player.currentRoom = lobby;
@@ -73,7 +77,7 @@ public class TutorialMap implements Map {
             #               +___________    ___________+               #
             #                           |  |                           #
             #   +----------+   +--------+  +--------+   +----------+   #
-            #   |          |___|                    |___           |   #
+            #   |          |___|                    |___|          |   #
             #   | training  ___        storage       ___  training |   #
             #   |  room 1  |   |                    |   |  room 2  |   #
             #   +----------+   +--------+  +--------+   +----------+   #
