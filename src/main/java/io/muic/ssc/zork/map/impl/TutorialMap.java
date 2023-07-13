@@ -52,10 +52,12 @@ public class TutorialMap implements Map {
         storage.setItem(ItemType.WOODENSWORD);
         trainingRoom1.setItem(ItemType.IRONSWORD);
         trainingRoom2.setItem(ItemType.POTION);
+        lobby.setItem(ItemType.POTION);
 
         // create monster
         boss.setMonster(MonsterType.FRISTBOSS);
         trainingRoom1.setMonster(MonsterType.ZOMBIE);
+        trainingRoom2.setMonster(MonsterType.ZOMBIE);
 
         // set the first location to be at lobby.
         player.currentRoom = lobby;

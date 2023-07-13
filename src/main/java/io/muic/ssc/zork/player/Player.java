@@ -14,6 +14,7 @@ public class Player {
     private int attackPower;
     private ItemType item;
     private ItemType weapon;
+    private boolean alive;
 
     public Room currentRoom;
 
@@ -22,6 +23,21 @@ public class Player {
     }
     public void setHp(int hp) {
         this.hp = hp;
+        if (this.hp > MAX_HP) {
+            this.hp = MAX_HP;
+        }
+    }
+
+    public boolean isAlive() {
+        return alive;
+    }
+    public void checkAlive() {
+        if (this.getHp() <= 0) {
+            setDead();
+        }
+    }
+    public void setDead() {
+        this.alive = false;
     }
 
     public int getAttackPower() {

@@ -2,6 +2,7 @@ package io.muic.ssc.zork.command.impl;
 
 import io.muic.ssc.zork.Game;
 import io.muic.ssc.zork.command.Command;
+import io.muic.ssc.zork.moster.Monster;
 import io.muic.ssc.zork.moster.MonsterType;
 
 import static io.muic.ssc.zork.Game.player;

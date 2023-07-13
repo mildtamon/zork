@@ -2,8 +2,6 @@ package io.muic.ssc.zork;
 
 import io.muic.ssc.zork.command.*;
 import io.muic.ssc.zork.map.Map;
-import io.muic.ssc.zork.map.MapFactory;
-import io.muic.ssc.zork.map.MapType;
 import io.muic.ssc.zork.player.Player;
 
 import java.util.ArrayList;

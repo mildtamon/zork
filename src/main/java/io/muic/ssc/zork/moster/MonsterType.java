@@ -14,6 +14,7 @@ public enum MonsterType {
 
 
     MonsterType(String monsterName, int attackPower, int monsHp, String monsterDescription) {
+        // TODO: declearconstructor.newInstance เพื่อไม่ให้เป็นตัวเดียวกัน link กัน + factory
         this.monsterName = monsterName;
         this.attackPower = attackPower;
         this.monsHp = monsHp;
