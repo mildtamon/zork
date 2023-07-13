@@ -57,17 +57,10 @@ public class TutorialMap implements Map {
         storage.setItem(ItemType.WOODENSWORD);
         trainingRoom1.setItem(ItemType.IRONSWORD);
         trainingRoom2.setItem(ItemType.POTION);
-        lobby.setItem(ItemType.POTION);
 
         // create monster
-        trainingRoom1.setMonster(new Zombie("zombie", "This is a zombie, hit your first monster!"));
-        trainingRoom2.setMonster(new Zombie("zombie2", "This is a zombie"));
-
-
-
-//        boss.setMonster(MonsterType.FRISTBOSS);
-//        trainingRoom1.setMonster(MonsterType.ZOMBIE);
-//        trainingRoom2.setMonster(MonsterType.ZOMBIE);
+        trainingRoom1.setMonster(new Zombie("zombie", null));
+        trainingRoom2.setMonster(new Zombie("zombie2", null));
 
         // set the first location to be at lobby.
         player.currentRoom = lobby;

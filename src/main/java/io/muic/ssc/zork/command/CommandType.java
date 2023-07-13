@@ -12,7 +12,8 @@ public enum CommandType {
     PLAY(PlayCommand.class, "play"),
     DROP(DropCommand.class, "drop"),
     ATTACK(AttackCommand.class, "attack with"),
-    USE(UseCommand.class, "use");
+    USE(UseCommand.class, "use"),
+    QUIT(QuitCommand.class, "quit");
 
     private Class<? extends Command> commandClass;      // need to get class -> so we know which command class to execute
     private String commandWord;

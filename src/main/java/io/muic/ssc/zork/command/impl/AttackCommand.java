@@ -23,7 +23,17 @@ public class AttackCommand implements Command {
                     if (currentMonster.isAlive()) {
                         System.out.printf("monster status: [\u001B[91m%d\u001B[0m/%d]\n", currentMonster.getMonsHp(), currentMonster.getMAX_MONS_HP());
                         player.setHp(player.getHp() - currentMonster.getAttackPower());
-                        System.out.printf("Ouch! you got hit! \ncurrent hp: [\u001B[91m%s\u001B[0m/%s]\n", player.getHp(), player.getMAxHp());
+                        System.out.println("Ouch! you got hit!");
+                        if (player.isAlive()) {
+                            System.out.printf("current hp: [\u001B[91m%s\u001B[0m/%s]\n", player.getHp(), player.getMAxHp());
+                        } else {
+                            // player died
+                            System.out.println("you are \u001B[91mdead\u001B[0m");
+                            System.out.println("going back to \u001B[93mhome\u001B[0m.");
+
+                            currentMap = null;
+                            System.out.println("\u001B[93m > home <\u001B[0m");
+                        }
                     } else {
                         System.out.println("the monster is dead");
                         player.getCurrentRoom().setMonster(null);

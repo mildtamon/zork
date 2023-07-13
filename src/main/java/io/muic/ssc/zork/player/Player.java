@@ -32,15 +32,7 @@ public class Player {
     }
 
     public boolean isAlive() {
-        return alive;
-    }
-    public void checkAlive() {
-        if (this.getHp() <= 0) {
-            setDead();
-        }
-    }
-    public void setDead() {
-        this.alive = false;
+        return this.getHp() > 0;
     }
 
     public int getAttackPower() {
@@ -66,7 +58,7 @@ public class Player {
 
     // constructor
     public Player() {
-        setHp(50);
+        setHp(10);
         setAttackPower(1);
         setItem(null);
         setWeapon(null);
