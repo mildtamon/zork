@@ -33,7 +33,7 @@ public class GoCommand implements Command {
                         System.out.printf("item in this room: \u001B[96m%s\u001B[0m\n", player.getCurrentRoom().getItem().getItemName());
                     }
                     if (player.getCurrentRoom().getMonster() != null) {
-                        System.out.printf("monster in this room: \u001B[91m%s\u001B[0m\n", player.getCurrentRoom().getMonster().getMonsName());
+                        System.out.printf("monster in this room: \u001B[91m%s\u001B[0m, %s\n", player.getCurrentRoom().getMonster().getMonsName(), player.getCurrentRoom().getMonster().getMonsDescription());
                     }
                 }
                 else { System.out.printf("There is a wall!, you cannot go %s!%n", argument); }

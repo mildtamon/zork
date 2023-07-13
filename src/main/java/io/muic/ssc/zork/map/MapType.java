@@ -1,5 +1,6 @@
 package io.muic.ssc.zork.map;
 
+import io.muic.ssc.zork.map.impl.AbandoHouseMap;
 import io.muic.ssc.zork.map.impl.TutorialMap;
 import io.muic.ssc.zork.room.Direction;
 
@@ -8,7 +9,8 @@ import java.util.Objects;
 import static io.muic.ssc.zork.Game.allMaps;
 
 public enum MapType {
-    TUTORIAL(TutorialMap.class, "Tutorial", "This is tutorial level to let the player familiar with the game and command");
+    TUTORIAL(TutorialMap.class, "Tutorial", "This is tutorial level to let the player familiar with the game and command"),
+    ABANDONHOUSE(AbandoHouseMap.class, "Abandon house", "an abandon house");
 
     private Class<? extends Map> mapClass;
     private String mapName;

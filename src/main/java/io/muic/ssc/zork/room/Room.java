@@ -19,14 +19,6 @@ public class Room {
         this.item = item;
     }
 
-//    MonsterType monster;
-//    public MonsterType getMonster() {
-//        return monster;
-//    }
-//    public void setMonster(MonsterType monster) {
-//        this.monster = monster;
-//    }
-
     Monster monster;
     public Monster getMonster() {
         return monster;

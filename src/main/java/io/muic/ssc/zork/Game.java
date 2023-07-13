@@ -2,7 +2,9 @@ package io.muic.ssc.zork;
 
 import io.muic.ssc.zork.command.*;
 import io.muic.ssc.zork.map.Map;
+import io.muic.ssc.zork.map.MapType;
 import io.muic.ssc.zork.player.Player;
+import io.muic.ssc.zork.map.MapFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,15 +38,16 @@ public class Game {
 
         // create map
         currentMap = null;
-//        MapFactory.createMap(MapType.TUTORIAL, MapType.TUTORIAL.getMapName(), MapType.TUTORIAL.getMapDescription());
 
-        System.out.println("type \u001B[95m'play'\u001B[0m and choose map to play! [\u001B[96mTutorial\u001B[0m / ...]");
+        for (MapType mapType : MapType.values()) {
+            allMaps.add(MapFactory.createMap(mapType, mapType.getMapName(), mapType.getMapDescription()));
+        }
 
-//        for (MapType mapType : MapType.values()) {
-//            allMaps.add(MapFactory.createMap(mapType, mapType.getMapName(), mapType.getMapDescription()));
-//        }
-
-//        currentMap = MapFactory.createMap(MapType.TUTORIAL, MapType.TUTORIAL.getMapName(), MapType.TUTORIAL.getMapDescription());
+        System.out.printf("type \u001B[95m'play'\u001B[0m and choose map to play! [");
+        for (Map each : allMaps) {
+            System.out.printf("\u001B[96m%s\u001B[0m/", each.getMapName());
+        }
+        System.out.println("...]");
 
         while (!isExit() && scanner.hasNextLine()) {
             String rawInput = scanner.nextLine();

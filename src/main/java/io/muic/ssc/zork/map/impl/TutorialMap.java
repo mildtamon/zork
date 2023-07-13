@@ -1,20 +1,20 @@
 package io.muic.ssc.zork.map.impl;
 
-import io.muic.ssc.zork.item.ItemType;
 import io.muic.ssc.zork.map.Map;
-//import io.muic.ssc.zork.moster.MonsterType;
-import io.muic.ssc.zork.moster.Monster;
-import io.muic.ssc.zork.moster.impl.Zombie;
+import io.muic.ssc.zork.moster.impl.Slime;
 import io.muic.ssc.zork.room.Room;
-
-import java.time.ZoneId;
-
+import io.muic.ssc.zork.item.ItemType;
+import io.muic.ssc.zork.moster.Monster;
+import io.muic.ssc.zork.moster.impl.Boss;
+import io.muic.ssc.zork.moster.impl.Zombie;
 import static io.muic.ssc.zork.Game.player;
 
 
 public class TutorialMap implements Map {
     private String mapName;
     private String mapDescription;
+
+    private Monster BOSS = new Boss("boss", "this is the first boss! kill him to finish the map", 10, 30);
 
     public String getMapName() {
         return mapName;
@@ -55,12 +55,13 @@ public class TutorialMap implements Map {
 
         // create item
         storage.setItem(ItemType.WOODENSWORD);
-        trainingRoom1.setItem(ItemType.IRONSWORD);
+        trainingRoom1.setItem(ItemType.WOODENSTICK);
         trainingRoom2.setItem(ItemType.POTION);
 
         // create monster
-        trainingRoom1.setMonster(new Zombie("zombie", null));
-        trainingRoom2.setMonster(new Zombie("zombie2", null));
+        trainingRoom1.setMonster(new Slime("slime", "Kill the guarding slime to get the sword."));
+        trainingRoom2.setMonster(new Zombie("zombie", "Kill the guarding zombie to get potion."));
+        boss.setMonster(BOSS);
 
         // set the first location to be at lobby.
         player.currentRoom = lobby;
@@ -73,13 +74,13 @@ public class TutorialMap implements Map {
 
     String tutorialLevelMap =
             """
-            ============================================================
+            ╋==========================================================╋
             #                                                          #
-            #               +--------------------------+               #
+            #               ╋--------------------------╋               #
             #               |                          |               #
             #               |        FIRST BOSS        |               #
             #               |                          |               #
-            #               +___________    ___________+               #
+            #               ╋___________    ___________╋               #
             #                           |  |                           #
             #   +----------+   +--------+  +--------+   +----------+   #
             #   |          |___|                    |___|          |   #
@@ -93,10 +94,15 @@ public class TutorialMap implements Map {
             #                      |            |                      #
             #                      +---+    +---+                      #
             #                          |    |                          #
-            ============================    ============================""";
+            ╋==========================╋    ╋==========================╋""";
 
     @Override
     public String printMap() {
         return String.format("[Map] %s: %s\n", this.getMapName(), this.getMapDescription()) + tutorialLevelMap;
+    }
+
+    @Override
+    public boolean isFinishedMap() {
+        return !BOSS.isAlive();
     }
 }

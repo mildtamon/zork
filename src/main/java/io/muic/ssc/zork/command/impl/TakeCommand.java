@@ -24,7 +24,7 @@ public class TakeCommand implements Command {
                     } else {
                         System.out.printf("taking \u001B[94m%s\u001B[0m!\n", itemType.getItemName());
 
-                        // if the item is weapon -> weapon slot
+                        // if the item is weapon -> weapon slot, else -> healing slot won't swap item.
                         if (itemType.getItemClass() == Weapon.class) {
 
                             // if the slot is occupied, swap item and drop in the current room

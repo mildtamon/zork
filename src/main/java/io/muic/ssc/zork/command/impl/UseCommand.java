@@ -19,7 +19,7 @@ public class UseCommand implements Command {
                 } else {
                     ItemType item = player.getItem();
                     player.setHp(player.getHp() + item.getDamage());
-                    System.out.printf("using \u001B[94m%s\u001B[0m\n", item.getItemName());
+                    System.out.printf("eating \u001B[94m%s\u001B[0m\n", item.getItemName());
                     System.out.println("\u001B[92m-healing\u001B[0m");
                     System.out.println("hp: " + player.getHp());
                     player.setItem(null);

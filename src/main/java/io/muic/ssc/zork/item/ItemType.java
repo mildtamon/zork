@@ -1,10 +1,17 @@
 package io.muic.ssc.zork.item;
 
 public enum ItemType {
-    WOODENSWORD(Weapon.class, "wooden sword", 3),
-    IRONSWORD(Weapon.class, "iron sword", 5),
-    POTION(Healing.class, "healing potion", 8),
-    APPLE(Healing.class, "apple", 3);
+    // weapon
+    WOODENSTICK(Weapon.class, "wooden stick", 3),
+    WOODENSWORD(Weapon.class, "wooden sword", 5),
+    IRONSWORD(Weapon.class, "iron sword", 8),
+    DIAMONDSWORD(Weapon.class, "diamond sword", 14),
+
+    // healing item
+    POTION(Healing.class, "healing potion", 10),
+    APPLE(Healing.class, "apple", 3),
+    BREAD(Healing.class, "bread", 5),
+    STEAK(Healing.class, "steak", 8);
 
     private Class<? extends Item> itemClass;
     private String itemName;

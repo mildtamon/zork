@@ -8,7 +8,7 @@ public class Player {
 
     // TODO: set dead to player
 
-    private final int MAX_HP = 50;
+    private final int MAX_HP = 100;
 
     private int hp;
     private int attackPower;
@@ -58,7 +58,7 @@ public class Player {
 
     // constructor
     public Player() {
-        setHp(10);
+        setHp(100);
         setAttackPower(1);
         setItem(null);
         setWeapon(null);
@@ -74,10 +74,10 @@ public class Player {
 
     public String playerInfo() {
         return String.format("""
-                          * current hp: %d/%d\s
-                          * current weapon: %s\s
-                          * current item: %s\s
-                          * attack power: %d""", getHp(), MAX_HP,  ((getWeapon() == null)? getWeapon() : getWeapon().getItemName()),
+                          * current hp: \u001B[91m%d\u001B[0m/%d\s
+                          * current weapon: \u001B[94m%s\u001B[0m\s
+                          * current item: \u001B[94m%s\u001B[0m\s
+                          * attack power: \u001B[91m%d\u001B[0m""", getHp(), MAX_HP,  ((getWeapon() == null)? getWeapon() : getWeapon().getItemName()),
                                                  ((getItem() == null)? getItem() : getItem().getItemName()), getAttackPower());
     }
 }
