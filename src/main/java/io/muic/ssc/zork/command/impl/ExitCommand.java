@@ -8,9 +8,9 @@ public class ExitCommand implements Command {
     @Override
     public void execute(Game game, String argument) {
         if (argument != null) {
-            System.out.println("'exit' does not have any argument, please try again");
+            System.out.println("\u001B[95m'exit'\u001B[0m does not have any argument, please try again.");
         } else {
-            System.out.println("Exiting the game. Thank you for playing Zork ;)");
+            System.out.println("Exiting the game. Thank you for playing \u001B[93mZork\u001B[0m ;)");
             game.exit();
         }
     }

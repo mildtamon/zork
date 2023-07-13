@@ -27,6 +27,9 @@ public class Player {
             this.hp = MAX_HP;
         }
     }
+    public int getMAxHp() {
+        return MAX_HP;
+    }
 
     public boolean isAlive() {
         return alive;

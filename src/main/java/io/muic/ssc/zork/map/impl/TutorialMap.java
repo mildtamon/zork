@@ -2,8 +2,13 @@ package io.muic.ssc.zork.map.impl;
 
 import io.muic.ssc.zork.item.ItemType;
 import io.muic.ssc.zork.map.Map;
-import io.muic.ssc.zork.moster.MonsterType;
+//import io.muic.ssc.zork.moster.MonsterType;
+import io.muic.ssc.zork.moster.Monster;
+import io.muic.ssc.zork.moster.impl.Zombie;
 import io.muic.ssc.zork.room.Room;
+
+import java.time.ZoneId;
+
 import static io.muic.ssc.zork.Game.player;
 
 
@@ -55,9 +60,14 @@ public class TutorialMap implements Map {
         lobby.setItem(ItemType.POTION);
 
         // create monster
-        boss.setMonster(MonsterType.FRISTBOSS);
-        trainingRoom1.setMonster(MonsterType.ZOMBIE);
-        trainingRoom2.setMonster(MonsterType.ZOMBIE);
+        trainingRoom1.setMonster(new Zombie("zombie", "This is a zombie, hit your first monster!"));
+        trainingRoom2.setMonster(new Zombie("zombie2", "This is a zombie"));
+
+
+
+//        boss.setMonster(MonsterType.FRISTBOSS);
+//        trainingRoom1.setMonster(MonsterType.ZOMBIE);
+//        trainingRoom2.setMonster(MonsterType.ZOMBIE);
 
         // set the first location to be at lobby.
         player.currentRoom = lobby;

@@ -28,8 +28,8 @@ public class Game {
     }
 
     public void start() {
-        System.out.println(">> starting Zork... <<");
-        System.out.println("type 'help' for list of commands");
+        System.out.println("\u001B[93m >> starting Zork... <<\u001B[0m");
+        System.out.println("type \u001B[95m'help'\u001B[0m for list of commands.");
 
         // create player
         player = new Player();
@@ -38,7 +38,7 @@ public class Game {
         currentMap = null;
 //        MapFactory.createMap(MapType.TUTORIAL, MapType.TUTORIAL.getMapName(), MapType.TUTORIAL.getMapDescription());
 
-        System.out.println("type 'play' and choose map to play! [Tutorial / ...]");
+        System.out.println("type \u001B[95m'play'\u001B[0m and choose map to play! [\u001B[96mTutorial\u001B[0m / ...]");
 
 //        for (MapType mapType : MapType.values()) {
 //            allMaps.add(MapFactory.createMap(mapType, mapType.getMapName(), mapType.getMapDescription()));
@@ -51,7 +51,7 @@ public class Game {
 
             CommandLine commandLine = CommandParser.parseCommand(rawInput);
             if (commandLine == null) {
-                System.out.printf("Invalid command '%s', please try again.\n", rawInput);
+                System.out.printf("Invalid command \u001B[93m'%s'\u001B[0m, please try again.\n", rawInput);
             } else {
                 Command command = CommandFactory.get(commandLine.getCommandType());
                 command.execute(this, commandLine.getArgument());

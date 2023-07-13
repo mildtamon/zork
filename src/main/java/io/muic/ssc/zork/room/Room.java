@@ -2,7 +2,8 @@ package io.muic.ssc.zork.room;
 
 import io.muic.ssc.zork.item.Item;
 import io.muic.ssc.zork.item.ItemType;
-import io.muic.ssc.zork.moster.MonsterType;
+import io.muic.ssc.zork.moster.Monster;
+//import io.muic.ssc.zork.moster.MonsterType;
 
 public class Room {
 
@@ -18,11 +19,19 @@ public class Room {
         this.item = item;
     }
 
-    MonsterType monster;
-    public MonsterType getMonster() {
+//    MonsterType monster;
+//    public MonsterType getMonster() {
+//        return monster;
+//    }
+//    public void setMonster(MonsterType monster) {
+//        this.monster = monster;
+//    }
+
+    Monster monster;
+    public Monster getMonster() {
         return monster;
     }
-    public void setMonster(MonsterType monster) {
+    public void setMonster(Monster monster) {
         this.monster = monster;
     }
 
